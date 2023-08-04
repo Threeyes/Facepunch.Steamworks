@@ -139,7 +139,8 @@ namespace Steamworks.Data
 	}
 	
 	[StructLayout( LayoutKind.Sequential, Pack = Platform.StructPlatformPackSize )]
-	internal struct SteamUGCDetails_t
+	[Serializable]//#标记为可序列化
+	public struct SteamUGCDetails_t
 	{
 		internal PublishedFileId PublishedFileId; // m_nPublishedFileId PublishedFileId_t
 		internal Result Result; // m_eResult EResult

@@ -1,0 +1,6 @@
+打包：
+-在Terminal输入：“dotnet build --configuration Release --no-incremental”。(命令行作用：Relase打包，并且清除重新打包)（Ref：https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x）
+
+复制打包后的文件：
+-Facepunch.Steamworks\UnityPlugin\redistributable_bin
+-Facepunch.Steamworks\Facepunch.Steamworks\bin\Release\net46【除了steam_api.dll、steam_api64.dll】
