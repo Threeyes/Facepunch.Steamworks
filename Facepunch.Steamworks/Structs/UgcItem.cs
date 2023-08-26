@@ -20,6 +20,19 @@ namespace Steamworks.Ugc
 		}
 
 		/// <summary>
+		/// #添加 使用details初始化Item，常用于反序列化
+		/// Ref：[internal static Item From( SteamUGCDetails_t details )]
+		/// </summary>
+		/// <param name="details"></param>
+		public void Init( SteamUGCDetails_t details )
+		{
+			_id = details.PublishedFileId;
+			Title = details.TitleUTF8();
+			Description = details.DescriptionUTF8();
+			Tags = details.TagsUTF8().ToLower().Split( new[] { ',' }, StringSplitOptions.RemoveEmptyEntries );
+		}
+
+		/// <summary>
 		/// #添加 获取Item详细信息，主要用于序列化
 		/// </summary>
 		public SteamUGCDetails_t Details { get { return details; } internal set { details = value; } }
